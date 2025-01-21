@@ -1,0 +1,115 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get --no-example
+
+## exception
+
+FileSystemException: FileSystemException: readInto failed, path = '/Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter/bin/internal/engine.version' (OS Error: Operation timed out, errno = 60)
+
+```
+#0      _RandomAccessFile.readIntoSync (dart:io/file_impl.dart:835:7)
+#1      _File.readAsBytesSync (dart:io/file_impl.dart:593:35)
+#2      _File.readAsStringSync (dart:io/file_impl.dart:624:18)
+#3      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:99:16)
+#4      ErrorHandlingFile.readAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:230:22)
+#5      _runSync (package:flutter_tools/src/base/error_handling_io.dart:600:14)
+#6      ErrorHandlingFile.readAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:229:12)
+#7      Cache.getVersionFor (package:flutter_tools/src/cache.dart:632:51)
+#8      CachedArtifact.version (package:flutter_tools/src/cache.dart:809:32)
+#9      CachedArtifact.isUpToDate (package:flutter_tools/src/cache.dart:822:9)
+#10     Cache.updateAll (package:flutter_tools/src/cache.dart:710:26)
+<asynchronous suspension>
+#11     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:1747:7)
+<asynchronous suspension>
+#12     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1450:27)
+<asynchronous suspension>
+#13     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#14     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#15     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:421:9)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#17     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#18     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:131:9)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#20     main (package:flutter_tools/executable.dart:94:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.27.1, on macOS 15.1 24B83 darwin-arm64, locale en-US)
+    • Flutter version 3.27.1 on channel stable at /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter
+    ! Warning: `flutter` on your path resolves to /Users/sabda/FlutterDev/flutter/bin/flutter, which is not inside your current Flutter SDK checkout at /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter. Consider adding /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter/bin to the front of your path.
+    ! Warning: `dart` on your path resolves to /Users/sabda/FlutterDev/flutter/bin/dart, which is not inside your current Flutter SDK checkout at /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter. Consider adding /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/flutter/flutter/bin to the front of your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 17025dd882 (5 weeks ago), 2024-12-17 03:23:09 +0900
+    • Engine revision cb4b5fff73
+    • Dart version 3.6.0
+    • DevTools version 2.40.2
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 35.0.0)
+    • Android SDK at /Users/sabda/Library/Android/sdk
+    • Platform android-35, build-tools 35.0.0
+    • Java binary at: /Applications/Android Studio Koala 2024.1.1 Patch 2.app/Contents/jbr/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 17.0.11+0-17.0.11b1207.24-11852314)
+    • All Android licenses accepted.
+
+[✗] Xcode - develop for iOS and macOS
+    ✗ Xcode installation is incomplete; a full installation is necessary for iOS and macOS development.
+      Download at: https://developer.apple.com/xcode/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+    ✗ CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation
+
+[✗] Chrome - develop for the web (Cannot find Chrome executable at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome)
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[✓] Android Studio (version 2024.1)
+    • Android Studio at /Applications/Android Studio Koala 2024.1.1 Patch 2.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.11+0-17.0.11b1207.24-11852314)
+
+[✓] IntelliJ IDEA Community Edition (version 2023.3.2)
+    • IntelliJ at /Users/sabda/Library/Mobile Documents/com~apple~CloudDocs/IntelliJ IDEA Community Edition.app
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] VS Code (version 1.85.1)
+    • VS Code at /Users/sabda/Downloads/Visual Studio Code.app/Contents
+    • Flutter extension version 3.102.0
+
+[✓] Connected device (2 available)
+    • sdk gphone64 arm64 (mobile) • emulator-5556 • android-arm64 • Android 14 (API 34) (emulator)
+    • macOS (desktop)             • macos         • darwin-arm64  • macOS 15.1 24B83 darwin-arm64
+
+[!] Network resources
+    ✗ A network error occurred while checking "https://pub.dev/": Failed host lookup: 'pub.dev'
+    ✗ A network error occurred while checking "https://storage.googleapis.com/": Failed host lookup: 'storage.googleapis.com'
+    ✗ A network error occurred while checking "https://maven.google.com/": Failed host lookup: 'maven.google.com'
+    ✗ A network error occurred while checking "https://cocoapods.org/": Failed host lookup: 'cocoapods.org'
+    ✗ A network error occurred while checking "https://github.com/": Failed host lookup: 'github.com'
+
+! Doctor found issues in 4 categories.
+```
